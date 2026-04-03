@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Roma Joana — Services</title>
+  <meta name="description" content="Roma is creative director, art director and image maker." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    :root {
+      --svc-bg: #c9bda9; /* Derived roughly from reference */
+      --svc-text: #ffffff;
+      --svc-heading: rgba(0, 0, 0, 0.05); /* very subtle dark background text */
+    }
+    
+    body {
+      background: var(--svc-bg);
+    }
+    
+    .nav {
+      background: transparent;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      border-bottom: none;
+    }
+    .nav__logo, .nav__link {
+      color: var(--text);
+    }
+
+    .services-hero {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .services-title {
+      font-family: var(--hero-font-display);
+      font-size: clamp(6rem, 24vw, 25rem);
+      font-weight: 800;
+      color: var(--svc-heading);
+      line-height: 0.8;
+      text-transform: uppercase;
+      white-space: nowrap;
+      user-select: none;
+      /* Initial opacity set in inline style via JS or just 1 */
+    }
+
+    .services-content {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      padding-top: 80vh; /* Start mostly down the page */
+      padding-bottom: 20vh;
+    }
+
+    .service-board {
+      width: 100%;
+      min-height: 100vh;
+      background: var(--svc-bg);
+      padding: 100px 4vw;
+      border-top: 1px solid rgba(255, 255, 255, 0.4); /* subtle board edge */
+      box-shadow: 0 -20px 60px rgba(0,0,0,0.03); /* separation shadow */
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      position: relative;
+    }
+    
+    .service-board:nth-child(even) {
+      background: #d4c8b6; /* slightly lighter for contrast */
+    }
+
+    .sb-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      width: 100%;
+      position: relative;
+      z-index: 2;
+    }
+
+    .sb-mega {
+      font-family: var(--hero-font-display);
+      font-size: clamp(3rem, 12vw, 10rem);
+      font-weight: 800;
+      color: var(--svc-text);
+      line-height: 0.85;
+      text-transform: uppercase;
+      margin-bottom: 40px;
+      letter-spacing: -0.02em;
+    }
+
+    .sb-sub {
+      font-size: clamp(1.2rem, 3vw, 2rem);
+      font-weight: 500;
+      color: var(--svc-text);
+      margin-bottom: 60px;
+      font-family: var(--font-sans);
+      letter-spacing: -0.01em;
+    }
+
+    .sb-details {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      color: var(--svc-text);
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    
+    @media (max-width: 768px) {
+      .sb-details {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    .sb-details p {
+      opacity: 0.9;
+    }
+
+    /* Keep the background text fixed but layer the content over it */
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" id="main-nav">
+    <div class="nav__left">
+      <a href="index.html" class="nav__logo" id="logo-link" aria-label="Roma Joana — Home">
+        <svg width="30" height="30" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="16" cy="16" r="15" stroke="currentColor" stroke-width="1.5"/>
+          <text x="50%" y="56%" dominant-baseline="middle" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="500" fill="currentColor">R</text>
+        </svg>
+      </a>
+    </div>
+    <div class="nav__center">
+      <!-- Empty center for services page -->
+    </div>
+    <div class="nav__right">
+      <a href="services.html" class="nav__link">Services</a>
+      <a href="about.html" class="nav__link" id="nav-about">About</a>
+      <a href="https://www.instagram.com/roma.romama/" target="_blank" rel="noopener" class="nav__link">Instagram <span class="nav__ext">↗</span></a>
+      <a href="https://www.linkedin.com/in/roma-joana/" target="_blank" rel="noopener" class="nav__link">LinkedIn <span class="nav__ext">↗</span></a>
+    </div>
+  </nav>
+
+  <div class="services-hero">
+    <h1 class="services-title" id="services-bg-text">SERVICOS</h1>
+  </div>
+
+  <div class="services-content">
+    
+    <!-- Art Direction Board -->
+    <div class="service-board">
+      <div class="sb-inner">
+        <div class="sb-mega">BUBBLE UP<br>YOUR VISION</div>
+        <div class="sb-sub">Direção de Arte e Produção</div>
+        <div class="sb-details">
+          <p>We shape your ideas into something real and visually striking. Through careful art direction, we bring concepts to life, maintaining visual consistency and strong aesthetics.</p>
+          <p><ul>
+            <li>Campaign Art Direction</li>
+            <li>Production Design</li>
+            <li>Set Design</li>
+            <li>Prop Styling</li>
+          </ul></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Branding Board -->
+    <div class="service-board">
+      <div class="sb-inner">
+        <div class="sb-mega">CRAFTING<br>IDENTITIES</div>
+        <div class="sb-sub">Branding & Identidade Visual</div>
+        <div class="sb-details">
+          <p>Building strong, memorable brands from the ground up. We create visual identities that speak clearly to your audience and stand out in the crowded market.</p>
+          <p><ul>
+            <li>Logo & Marks</li>
+            <li>Brand Guidelines</li>
+            <li>Typography & Color</li>
+            <li>Visual Strategy</li>
+          </ul></p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    // Fade out "SERVICOS" text as you scroll down
+    const bgText = document.getElementById('services-bg-text');
+    
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      const windowHeight = window.innerHeight;
+      
+      // Calculate opacity based on scroll position.
+      // Starts at 1.0 (or original opacity), goes to 0 as you scroll a full screen height
+      let newOpacity = 1 - (scrollY / (windowHeight * 0.8));
+      if (newOpacity < 0) newOpacity = 0;
+      if (newOpacity > 1) newOpacity = 1;
+
+      // The text initially had a color like rgba(0,0,0,0.05). Let's just tie the root element's opacity.
+      // Or we can manipulate the element opacity style
+      bgText.style.opacity = newOpacity;
+      
+      // Optional subtle parallax
+      bgText.style.transform = `translateY(${scrollY * 0.2}px)`;
+    });
+  </script>
+</body>
+</html>
