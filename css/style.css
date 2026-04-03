@@ -1043,22 +1043,75 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
 }
 
 @media (max-width: 768px) {
+  /* Nav */
+  .nav { padding: 0 12px; justify-content: center; }
+  .nav__view-btn { padding: 5px 12px; font-size: 10px; }
+
+  /* Hero */
+  .hero-panel {
+    min-height: 70vh;
+    height: 70vh;
+  }
+  .hero-panel__row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  /* Columns view */
   .projects-grid { grid-template-columns: repeat(3, 1fr); }
-  .nav__center { display: none; }
-  .project-page { grid-template-columns: 1fr; }
-  .project-info { position: static; height: auto; }
-  .about-grid { grid-template-columns: 1fr; padding: 40px 16px; }
   .column-item { grid-template-columns: 1fr; min-height: auto; }
+  .column-item--flip { direction: ltr; }
+  .column-item--flip .column-item__image { order: -1; }
   .column-item__text { padding: 32px 24px; }
-  .list-item { grid-template-columns: 40px 1fr 60px; }
+  .column-item__image { height: 55vw; }
+
+  /* List view */
+  .list-item { grid-template-columns: 40px 1fr 60px; padding: 14px 16px; }
   .list-item__role { display: none; }
   .list-item__preview { display: none; }
+
+  /* Project page */
+  .project-page { grid-template-columns: 1fr; }
+  .project-info { position: static; height: auto; }
+
+  /* About */
+  .about-grid { grid-template-columns: 1fr; padding: 40px 16px; }
+  .about-col { border-right: none; border-bottom: 1px solid var(--border); padding: 0 0 32px; margin-bottom: 32px; }
+  .about-col:last-child { border-bottom: none; margin-bottom: 0; }
+
+  /* Services */
+  .service-board { padding: 60px 24px; }
+  .sb-details { grid-template-columns: 1fr; gap: 24px; }
+
+  /* Contato */
+  .contato-item { flex-direction: column; gap: 6px; }
+  .contato-header { margin-bottom: 48px; }
 }
 
 @media (max-width: 480px) {
+  /* Nav */
+  .nav { padding: 0 8px; }
+  .nav__view-btn { padding: 5px 10px; font-size: 9px; letter-spacing: 0.06em; }
+
+  /* Hero: empilhar em 1 coluna em telas muito pequenas */
+  .hero-panel { min-height: auto; height: auto; }
+  .hero-panel__row {
+    position: relative;
+    grid-template-columns: 1fr;
+    grid-template-rows: unset;
+  }
+  .hero-panel__fig { height: 60vw; }
+
+  /* Grid */
   .projects-grid { grid-template-columns: repeat(2, 1fr); }
-  .nav { padding: 0 14px; }
-  .nav__right { gap: 14px; }
+
+  /* Columns */
+  .column-item__text { padding: 24px 16px; }
+  .column-item__image { height: 65vw; }
+
+  /* Contato */
+  .contato-wrap { padding: 0 16px; }
+  .contato-heading { margin-bottom: 16px; }
 }
 
 /* =====================================================
